@@ -13,7 +13,8 @@
           success: function(data){
             //log the response to the console
             console.log(data);
-            $("h1").html(data);
+            //change data to string and fill h1
+            $("h1").html(JSON.stringify(data));
           },
           error: function(){
             //log the error to the console
