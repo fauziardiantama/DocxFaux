@@ -4,24 +4,37 @@
   </head>
   <body>
     <h1>Hello World!</h1>
+    <div id="progressBar" style="width: 0%; height: 20px; background-color: #ff0000; display: none;"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
-        //make api request to https://api.github.com/users/username
+        var progressBar = $("#progressBar");
+
         $.ajax({
           url: "https://doc-gen.faridfrederick.repl.co/api/generatedocument",
+          xhr: function(){
+            var xhr = new window.XMLHttpRequest();
+            xhr.addEventListener("progress", function(evt){
+              if (evt.lengthComputable) {
+                var percentComplete = (evt.loaded / evt.total) * 100;
+                progressBar.css("width", percentComplete + "%");
+              }
+            }, false);
+            return xhr;
+          },
+          beforeSend: function(){
+            progressBar.css("width", "0%");
+            progressBar.show();
+          },
           success: function(data){
-            //log the response to the console
             console.log(data);
-            //change data to string and fill h1
             $("h1").html(JSON.stringify(data));
           },
           error: function(){
-            //log the error to the console
             console.log("error");
           },
           complete: function(){
-            //log the completion to the console
+            progressBar.hide();
             console.log("complete");
           }
         });
