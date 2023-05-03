@@ -4,16 +4,16 @@
   </head>
   <body>
     <h1>Hello World!</h1>
-    import jquery
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){
         //make api request to https://api.github.com/users/username
         $.ajax({
-          url: "https://doc-gen.faridfrederick.repl.co/tesss",
+          url: "https://doc-gen.faridfrederick.repl.co/api/generatedocument",
           success: function(data){
             //log the response to the console
             console.log(data);
+            $("h1").html(data);
           },
           error: function(){
             //log the error to the console
