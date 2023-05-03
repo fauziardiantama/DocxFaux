@@ -4,5 +4,27 @@
   </head>
   <body>
     <h1>Hello World!</h1>
+    import jquery
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        //make api request to https://api.github.com/users/username
+        $.ajax({
+          url: "https://doc-gen.faridfrederick.repl.co/tesss",
+          success: function(data){
+            //log the response to the console
+            console.log(data);
+          },
+          error: function(){
+            //log the error to the console
+            console.log("error");
+          },
+          complete: function(){
+            //log the completion to the console
+            console.log("complete");
+          }
+        });
+      });
+    </script>
   </body>
 <html>
