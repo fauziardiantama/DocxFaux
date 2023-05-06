@@ -5,9 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+        background-image: url('bg-1.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+      }
+
+      header .h1 {
+        font-size: 4rem;
+      }
+
+      .start {
+        position: absolute;
+        bottom: 0;
+        font-size: 2rem;
+      }
+
+      section#aboutus {
+        padding-top: 40vh;
+        padding-bottom: 40vh;
+        background-image: url('bg-2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+      }
+
+      @media (min-width: 544px) {
+        header .h1 {
+          font-size: 5rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        header .h1 {
+          font-size: 6rem;
+        }
+      }
+
+      .img-absolute {
+        z-index: -1;
+      }
+      
+    </style>
   </head>
-  <body style="background-color: #0000;">
-    <h1>Hello, world!</h1>
+  <body style="background-color: #000000;" class="text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark d-none fixed-top pt-3 pb-3" style="background-color: rgba(0,0,0, 0.8);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!--img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"-->
+          DocxFaux
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#aboutus">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactus">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Indonesia</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Make a div full screen-->
+    <header class="position-relative text-center d-flex flex-column justify-content-center align-items-center vh-100 mb-5">
+      <div class="m-0 position-relative w-100 animate__animated animate__fadeInDown  animate__slow animate__delay-1s">
+        <p class="h1 fw-bold m-0 mb-3">DocxFaux</p>
+        <p class="h5 fw-lighter mb-5">Who needs creativity when you've got A.I.?</p>
+      </div>
+      <div class="animate__animated animate__fadeInDown animate__duration-1s animate__delay-2s start pb-5 fw-lighter">
+        <a href="#aboutus" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.75)">
+          <div style="margin:-5px">start</div>
+          <div class="animate__animated animate__infinite animate__shakeY" style="--animate-duration: 6s;">
+            <i class="fas fa-angles-down"></i>
+          </div>
+        </a>
+      </div>
+    </header>
+    <section id="aboutus" class="content">
+      <div class="container-fluid text-justify">
+        <div class="row">
+          <div class="col-lg-6 col-12 ps-lg-5 ps-md-5 ps-sm-5 pe-md-5 pe-sm-5 aos-init aos-animate" data-aos="fade-right" data-aos-offset="300">
+            <p class="h1 fw-bold mb-5 text-center text-lg-start">About Us</p>
+            <p style="text-align: justify;">
+              <!--<b>DocxFaux</b> adalah sebuah platform online yang menyediakan layanan untuk menghasilkan dokumen-dokumen akademik, seperti tesis ringan. Kami menyediakan sepuluh dokumen yang dapat diunduh sebagai satu file kompresi zip dalam format .docx dan dapat disesuaikan dengan tema dan bahasa yang diinginkan. Layanan kami memberikan keuntungan dalam hal waktu dan tenaga karena kami mengedepankan nilai kepuasan pelanggan dan selalu berusaha memberikan layanan yang terbaik. Dokumen-dokumen tersebut dihasilkan dengan kualitas tinggi, akurat, dan aman, sehingga memudahkan pengguna untuk membuat dokumen akademik yang sesuai dengan kebutuhan. Oleh karena itu, kami menyarankan agar layanan kami digunakan dengan bijak dan sesuai dengan hukum yang berlaku. Kami tidak bertanggung jawab atas segala bentuk penyalahgunaan layanan kami.-->
+              <b>DocxFaux</b> is an online platform that offers services to produce academic documents, such as lightweight theses. We provide ten documents that can be downloaded as a compressed zip file in .docx format and can be customized with the desired theme and language. Our service offers benefits in terms of time and effort as we prioritize customer satisfaction and always strive to provide the best service. These documents are produced with high quality, accuracy, and security, making it easier for users to create academic documents that meet their needs. Therefore, we recommend that our service be used wisely and in accordance with applicable law. We are not responsible for any misuse of our service.
+            </p>
+          </div>
+          <div class="col-lg-6 col-0">
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!--cdn jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Duration of animation (in milliseconds)
+        offset: 200, // Offset (in pixels) from the top of the viewport
+        easing: 'ease-in-out', // Easing function for animation
+        delay: 0, // Delay (in milliseconds) before animation starts
+      });
+      $(document).ready(function() {
+        var lastScrollTop = 0;
+        var navbarHeight = $('.navbar').outerHeight();
+        var screenHeight = $(window).height();
+        
+        $(window).scroll(function() {
+          var scrollTop = $(this).scrollTop();
+          console.log(scrollTop);
+          if (scrollTop > screenHeight - navbarHeight) {
+            if (scrollTop > lastScrollTop) {
+              $('.navbar').fadeIn('slow').removeClass('d-none');
+            } else {
+              $('.navbar').fadeOut('slow').addClass('d-none');
+            }
+          } else {
+            $('.navbar').fadeOut('slow').addClass('d-none');
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+      });
+    </script>
   </body>
 </html>
