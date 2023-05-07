@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>DocxFaux | Docx generator by Fauzi Ardiantama</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -46,6 +46,168 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: right;
+      }
+      .neon-input:focus {
+        box-shadow: 0 0 2px #03e9f4,
+              0 0 3px #03e9f4,
+              0 0 5px #03e9f4,
+              0 0 20px #03e9f4,
+              inset 0 0 5px #03e9f4;
+      }
+
+      .tag-parent {      
+        display: flex;
+        width: 100%;
+        padding: 0rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--bs-body-color);
+        background-color: var(--bs-body-bg);
+        background-clip: padding-box;
+        border: 0px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: var(--bs-border-radius);
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        align-items: center;
+      }
+
+      .tag-parent.neon-shadow {
+        box-shadow: 0 0 2px #03e9f4,
+              0 0 3px #03e9f4,
+              0 0 5px #03e9f4,
+              0 0 20px #03e9f4,
+              inset 0 0 5px #03e9f4;
+      }
+
+      .tag-span {
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+        margin: 0 .25rem;
+        background: #03e9f4;
+        color: #050801;
+        padding: 0 0.25rem;
+        box-shadow: 0 0 1px #03e9f4,
+              0 0 1px #03e9f4,
+              0 0 2px #03e9f4,
+              0 0 5px #03e9f4;
+        border-radius: var(--bs-border-radius);
+      }
+
+      a.neon
+      {
+        position: relative;
+        display: inline-block;
+        padding: 15px 70px;
+        margin: 0 20px;
+        color: #03e9f4;
+        font-size: 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        letter-spacing: 4px;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+      }
+      a.neon:hover
+      {
+        background: #03e9f4;
+        color: #050801;
+        box-shadow: 0 0 5px #03e9f4,
+              0 0 5px #03e9f4,
+              0 0 10px #03e9f4,
+              0 0 100px #03e9f4;
+      }
+      a.neon span
+      {
+        position: absolute;
+        display: block;
+      }
+      a.neon span:nth-child(1)
+      {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #03e9f4);
+        animation: animate1 1s linear infinite;
+      }
+      @keyframes animate1
+      {
+        0%
+        {
+          left: -100%;
+        }
+        50%, 100%
+        {
+          left: 100%;
+        }
+      }
+      a.neon span:nth-child(2)
+      {
+        top: -100px;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #03e9f4);
+        animation: animate2 1s linear infinite;
+        animation-delay: 0.25s;
+      }
+      @keyframes animate2
+      {
+        0%
+        {
+          top: -100%;
+        }
+        50%, 100%
+        {
+          top: 100%;
+        }
+      }
+      a.neon span:nth-child(3)
+      {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #03e9f4);
+        animation: animate3 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+      @keyframes animate3
+      {
+        0%
+        {
+          right: -100%;
+        }
+        50%, 100%
+        {
+          right: 100%;
+        }
+      }
+      a.neon span:nth-child(4)
+      {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #03e9f4);
+        animation: animate4 1s linear infinite;
+        animation-delay: 0.75s;
+      }
+      @keyframes animate4
+      {
+        0%
+        {
+          bottom: -100%;
+        }
+        50%, 100%
+        {
+          bottom: 100%;
+        }
       }
 
       @media (min-width: 544px) {
@@ -131,10 +293,53 @@
         </div>
       </div>
     </section>
+    <section id="service" class="content pt-5 pb-5">
+      <div class="container-fluid text-justify">
+        <div class="row ps-2 pe-2 ps-lg-0 pe-lg-0">
+          <div class="col-lg-4 col-0">
+          </div>
+          <div class="col-lg-4 col-12 align-items-center align-content-center">
+            <p class="h1 fw-bold mb-5 text-center">Generate Documents</p>
+            <div class="form-group row mb-3">
+              <label for="tema" class="col-2 col-form-label">Themes</label>
+              <div class="col-10">
+                <div class="tag-parent">
+                  <span class="tag-span">something <i class="fas fa-xmark" style="float: right;display: inline-block;padding-left: 0.5rem;"></i></span>
+                  <input id="tema" type="text" data-role="tagsinput" style="box-shadow: none; background-color: rgba(0,0,0, 0);" class="ps-0 pe-0 tag-input d-inline-block form-control border-0 text-white" placeholder="Ex: Nature, Apollo-11, Constantinopele">
+                </div>
+                <!--div style="font-size: 10px;">*Pisahkan setiap tema dengan koma atau spasi, tidak boleh lebih dari 10 tema.</div-->
+                <div style="font-size: 10px;">*Separate each theme with a comma or space, and there should not be more than 10 themes.</div>
+              </div>
+            </div>
+            <div class="form-group row mb-5">
+              <label for="bahasa" class="col-2 col-form-label">Language</label>
+              <div class="col-10">
+                <input id="bahasa" type="text" class="form-control neon-input border-0 text-white" id="bahasa" placeholder="Ex: ID">
+              </div>
+            </div>
+            <div class="text-center">
+              <a class="neon" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                submit
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-0">
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <!--cdn jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--cdn fontawesome-->
+    <script src="https://kit.fontawesome.com/2f4d8d3ce9.js" crossorigin="anonymous"></script>
+    <!--cdn animate.css-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
     <script>
       AOS.init({
         duration: 1000, // Duration of animation (in milliseconds)
@@ -149,7 +354,6 @@
         
         $(window).scroll(function() {
           var scrollTop = $(this).scrollTop();
-          console.log(scrollTop);
           if (scrollTop > screenHeight - navbarHeight) {
             if (scrollTop > lastScrollTop) {
               $('.navbar').fadeIn('slow').removeClass('d-none');
@@ -161,6 +365,31 @@
           }
           
           lastScrollTop = scrollTop;
+        });
+      });
+      $(document).ready(function() {
+        var input = document.getElementsByClassName("tag-input")[0];
+
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            var tag = input.value;
+            if (tag.length > 0) {
+              var tagSpan = document.createElement("span");
+              tagSpan.classList.add("tag-span");
+              tagSpan.innerHTML = tag + " <i class='fas fa-xmark' style='float: right;display: inline-block;padding-left: 0.5rem;'></i>";
+              var tagParent = document.getElementsByClassName("tag-parent")[0];
+              tagParent.appendChild(tagSpan);
+              input.value = "";
+            }
+          }
+        });
+
+        $('input').focus(function() {
+            $(this).parent().addClass('neon-shadow');
+        });
+        $('input').blur(function() {
+            $(this).parent().removeClass('neon-shadow');
         });
       });
     </script>
