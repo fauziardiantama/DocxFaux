@@ -1,15 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DocxFaux | Docx generator by Fauzi Ardiantama</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       rel="stylesheet"
@@ -23,7 +28,7 @@
         font-family: Arial, Helvetica, sans-serif;
       }
       header {
-        background-image: url('bg-1.png');
+        background-image: url("bg-1.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
@@ -42,23 +47,31 @@
       section#aboutus {
         padding-top: 40vh;
         padding-bottom: 40vh;
-        background-image: url('bg-2.png');
+        margin-bottom: 10vh;
+        background-image: url("bg-2.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: right;
       }
-      .neon-input:focus {
-        box-shadow: 0 0 2px #03e9f4,
-              0 0 3px #03e9f4,
-              0 0 5px #03e9f4,
-              0 0 20px #03e9f4,
-              inset 0 0 5px #03e9f4;
+
+      section#contactus {
+        padding-top: 40vh;
+        padding-bottom: 40vh;
+        background-image: url("bg-3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left;
       }
 
-      .tag-parent {      
+      .neon-input:focus {
+        box-shadow: 0 0 2px #03e9f4, 0 0 3px #03e9f4, 0 0 5px #03e9f4,
+          0 0 20px #03e9f4, inset 0 0 5px #03e9f4;
+      }
+
+      .tag-parent {
         display: flex;
         width: 100%;
-        padding: 0rem .75rem;
+        padding: 0rem 0.75rem;
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5;
@@ -70,35 +83,29 @@
         -moz-appearance: none;
         appearance: none;
         border-radius: var(--bs-border-radius);
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         align-items: center;
       }
 
       .tag-parent.neon-shadow {
-        box-shadow: 0 0 2px #03e9f4,
-              0 0 3px #03e9f4,
-              0 0 5px #03e9f4,
-              0 0 20px #03e9f4,
-              inset 0 0 5px #03e9f4;
+        box-shadow: 0 0 2px #03e9f4, 0 0 3px #03e9f4, 0 0 5px #03e9f4,
+          0 0 20px #03e9f4, inset 0 0 5px #03e9f4;
       }
 
       .tag-span {
         font-size: 12px;
         display: inline-flex;
         align-items: center;
-        margin: 0 .25rem;
+        margin: 0 0.25rem;
         background: #03e9f4;
         color: #050801;
         padding: 0 0.25rem;
-        box-shadow: 0 0 1px #03e9f4,
-              0 0 1px #03e9f4,
-              0 0 2px #03e9f4,
-              0 0 5px #03e9f4;
+        box-shadow: 0 0 1px #03e9f4, 0 0 1px #03e9f4, 0 0 2px #03e9f4,
+          0 0 5px #03e9f4;
         border-radius: var(--bs-border-radius);
       }
 
-      a.neon
-      {
+      a.neon {
         position: relative;
         display: inline-block;
         padding: 15px 70px;
@@ -112,22 +119,17 @@
         letter-spacing: 4px;
         -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
       }
-      a.neon:hover
-      {
+      a.neon:hover {
         background: #03e9f4;
         color: #050801;
-        box-shadow: 0 0 5px #03e9f4,
-              0 0 5px #03e9f4,
-              0 0 10px #03e9f4,
-              0 0 100px #03e9f4;
+        box-shadow: 0 0 5px #03e9f4, 0 0 5px #03e9f4, 0 0 10px #03e9f4,
+          0 0 100px #03e9f4;
       }
-      a.neon span
-      {
+      a.neon span {
         position: absolute;
         display: block;
       }
-      a.neon span:nth-child(1)
-      {
+      a.neon span:nth-child(1) {
         top: 0;
         left: 0;
         width: 100%;
@@ -135,19 +137,16 @@
         background: linear-gradient(90deg, transparent, #03e9f4);
         animation: animate1 1s linear infinite;
       }
-      @keyframes animate1
-      {
-        0%
-        {
+      @keyframes animate1 {
+        0% {
           left: -100%;
         }
-        50%, 100%
-        {
+        50%,
+        100% {
           left: 100%;
         }
       }
-      a.neon span:nth-child(2)
-      {
+      a.neon span:nth-child(2) {
         top: -100px;
         right: 0;
         width: 2px;
@@ -156,19 +155,16 @@
         animation: animate2 1s linear infinite;
         animation-delay: 0.25s;
       }
-      @keyframes animate2
-      {
-        0%
-        {
+      @keyframes animate2 {
+        0% {
           top: -100%;
         }
-        50%, 100%
-        {
+        50%,
+        100% {
           top: 100%;
         }
       }
-      a.neon span:nth-child(3)
-      {
+      a.neon span:nth-child(3) {
         bottom: 0;
         right: -100%;
         width: 100%;
@@ -177,19 +173,16 @@
         animation: animate3 1s linear infinite;
         animation-delay: 0.5s;
       }
-      @keyframes animate3
-      {
-        0%
-        {
+      @keyframes animate3 {
+        0% {
           right: -100%;
         }
-        50%, 100%
-        {
+        50%,
+        100% {
           right: 100%;
         }
       }
-      a.neon span:nth-child(4)
-      {
+      a.neon span:nth-child(4) {
         bottom: -100%;
         left: 0;
         width: 2px;
@@ -198,14 +191,12 @@
         animation: animate4 1s linear infinite;
         animation-delay: 0.75s;
       }
-      @keyframes animate4
-      {
-        0%
-        {
+      @keyframes animate4 {
+        0% {
           bottom: -100%;
         }
-        50%, 100%
-        {
+        50%,
+        100% {
           bottom: 100%;
         }
       }
@@ -225,23 +216,103 @@
       .img-absolute {
         z-index: -1;
       }
+
+      .neon-input.input-fade::-webkit-input-placeholder {
+        -webkit-transition: opacity 0.3s linear;
+        opacity: 0;
+      }
+
+      .neon-input.input-unfade::-webkit-input-placeholder {
+        opacity: 1;
+      }
       
+      .contact textarea {
+        resize: none;
+      }
+      .contact .form-label {
+        font-size: 12px;
+        color: #5e9bfc;
+        margin: 0;
+        display: block;
+        opacity: 1;
+        -webkit-transition: .333s ease top, .333s ease opacity;
+        transition: .333s ease top, .333s ease opacity;
+      }
+      .contact .form-control {
+        border-radius: 0;
+        border-color: #ccc;
+          border-width: 0 0 2px 0;
+          border-style: none none solid none;
+          box-shadow: none;
+      }
+      .contact .form-control:focus {
+        box-shadow: none;
+        border-color: #5e9bfc;
+      }
+      .contact .js-hide-label {
+        opacity: 0; 	
+      }
+      .contact .js-unhighlight-label {
+        color: #999 
+      }
+      .contact .btn-start-order {
+        background: 0 0 #ffffff;
+          border: 1px solid #2f323a;
+          border-radius: 3px;
+          color: #2f323a;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          line-height: inherit;
+          margin: 30px 0;
+          padding: 10px 50px;
+          text-transform: uppercase;
+          transition: all 0.25s ease 0s;
+      }
+      .contact .btn-start-order:hover,.contact .btn-start-order:active,.contact .btn-start-order:focus {
+        border-color: #5e9bfc;
+        color: #5e9bfc;
+      }
+      .contact input, .contact textarea, .contact input:focus, .contact textarea:focus, .contact button, .contact input:-internal-autofill-selected, .contact input:-webkit-autofill, .contact input:-webkit-autofill:hover, .contact input:-webkit-autofill:focus, .contact input:-webkit-autofill:active, .contact input:-webkit-autofill:valid, .contact input:-webkit-autofill:invalid, .contact input:-webkit-autofill:required, .contact input:-webkit-autofill:disabled, .contact textarea:-internal-autofill-selected, .contact textarea:-webkit-autofill, .contact textarea:-webkit-autofill:hover, .contact textarea:-webkit-autofill:focus, .contact textarea:-webkit-autofill:active, .contact textarea:-webkit-autofill:valid, .contact textarea:-webkit-autofill:invalid, .contact textarea:-webkit-autofill:required, .contact textarea:-webkit-autofill:disabled {
+        background-color: transparent !important;
+      }
+
+      .contact button {
+        border-color: #fff !important;
+        color: #fff !important;
+      }
     </style>
   </head>
-  <body style="background-color: #000000;" class="text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark d-none fixed-top pt-3 pb-3" style="background-color: rgba(0,0,0, 0.8);">
+  <body style="background-color: #000000" class="text-white">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark d-none fixed-top pt-3 pb-3"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <!--img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"-->
           DocxFaux
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDarkDropdown"
+          aria-controls="navbarNavDarkDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="border: none"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNavDarkDropdown">
+        <div
+          class="collapse navbar-collapse justify-content-end text-center"
+          id="navbarNavDarkDropdown"
+        >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#aboutus">About Us</a>
+              <a class="nav-link active" aria-current="page" href="#aboutus"
+                >About Us</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
@@ -250,10 +321,20 @@
               <a class="nav-link" href="#contactus">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Language
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
                 <li><a class="dropdown-item" href="#">English</a></li>
                 <li><a class="dropdown-item" href="#">Indonesia</a></li>
               </ul>
@@ -264,15 +345,30 @@
     </nav>
 
     <!-- Make a div full screen-->
-    <header class="position-relative text-center d-flex flex-column justify-content-center align-items-center vh-100 mb-5">
-      <div class="m-0 position-relative w-100 animate__animated animate__fadeInDown  animate__slow animate__delay-1s">
+    <header
+      class="position-relative text-center d-flex flex-column justify-content-center align-items-center vh-100 mb-5"
+    >
+      <div
+        class="m-0 position-relative w-100 animate__animated animate__fadeInDown animate__slow animate__delay-1s"
+      >
         <p class="h1 fw-bold m-0 mb-3">DocxFaux</p>
-        <p class="h5 fw-lighter mb-5">Who needs creativity when you've got A.I.?</p>
+        <p class="h5 fw-lighter mb-5">
+          Who needs creativity when you've got A.I.?
+        </p>
       </div>
-      <div class="animate__animated animate__fadeInDown animate__duration-1s animate__delay-2s start pb-5 fw-lighter">
-        <a href="#aboutus" class="text-decoration-none" style="color: rgba(255, 255, 255, 0.75)">
-          <div style="margin:-5px">start</div>
-          <div class="animate__animated animate__infinite animate__shakeY" style="--animate-duration: 6s;">
+      <div
+        class="animate__animated animate__fadeInDown animate__duration-1s animate__delay-2s start pb-5 fw-lighter"
+      >
+        <a
+          href="#aboutus"
+          class="text-decoration-none"
+          style="color: rgba(255, 255, 255, 0.75)"
+        >
+          <div style="margin: -5px">start</div>
+          <div
+            class="animate__animated animate__infinite animate__shakeY"
+            style="--animate-duration: 6s"
+          >
             <i class="fas fa-angles-down"></i>
           </div>
         </a>
@@ -281,44 +377,91 @@
     <section id="aboutus" class="content">
       <div class="container-fluid text-justify">
         <div class="row">
-          <div class="col-lg-6 col-12 ps-lg-5 ps-md-5 ps-sm-5 pe-md-5 pe-sm-5 aos-init aos-animate" data-aos="fade-right" data-aos-offset="300">
+          <div
+            class="col-lg-6 col-12 ps-lg-5 ps-md-5 ps-sm-5 pe-md-5 pe-sm-5 aos-init aos-animate"
+            data-aos="fade-right"
+            data-aos-offset="300"
+          >
             <p class="h1 fw-bold mb-5 text-center text-lg-start">About Us</p>
-            <p style="text-align: justify;">
+            <p style="text-align: justify">
               <!--<b>DocxFaux</b> adalah sebuah platform online yang menyediakan layanan untuk menghasilkan dokumen-dokumen akademik, seperti tesis ringan. Kami menyediakan sepuluh dokumen yang dapat diunduh sebagai satu file kompresi zip dalam format .docx dan dapat disesuaikan dengan tema dan bahasa yang diinginkan. Layanan kami memberikan keuntungan dalam hal waktu dan tenaga karena kami mengedepankan nilai kepuasan pelanggan dan selalu berusaha memberikan layanan yang terbaik. Dokumen-dokumen tersebut dihasilkan dengan kualitas tinggi, akurat, dan aman, sehingga memudahkan pengguna untuk membuat dokumen akademik yang sesuai dengan kebutuhan. Oleh karena itu, kami menyarankan agar layanan kami digunakan dengan bijak dan sesuai dengan hukum yang berlaku. Kami tidak bertanggung jawab atas segala bentuk penyalahgunaan layanan kami.-->
-              <b>DocxFaux</b> is an online platform that offers services to produce academic documents, such as lightweight theses. We provide ten documents that can be downloaded as a compressed zip file in .docx format and can be customized with the desired theme and language. Our service offers benefits in terms of time and effort as we prioritize customer satisfaction and always strive to provide the best service. These documents are produced with high quality, accuracy, and security, making it easier for users to create academic documents that meet their needs. Therefore, we recommend that our service be used wisely and in accordance with applicable law. We are not responsible for any misuse of our service.
+              <b>DocxFaux</b> is an online platform that offers services to
+              produce academic documents, such as lightweight theses. We provide
+              ten documents that can be downloaded as a compressed zip file in
+              .docx format and can be customized with the desired theme and
+              language. Our service offers benefits in terms of time and effort
+              as we prioritize customer satisfaction and always strive to
+              provide the best service. These documents are produced with high
+              quality, accuracy, and security, making it easier for users to
+              create academic documents that meet their needs. Therefore, we
+              recommend that our service be used wisely and in accordance with
+              applicable law. We are not responsible for any misuse of our
+              service.
             </p>
           </div>
-          <div class="col-lg-6 col-0">
-          </div>
+          <div class="col-lg-6 col-0"></div>
         </div>
       </div>
     </section>
     <section id="service" class="content pt-5 pb-5">
       <div class="container-fluid text-justify">
         <div class="row ps-2 pe-2 ps-lg-0 pe-lg-0">
-          <div class="col-lg-4 col-0">
-          </div>
+          <div class="col-lg-4 col-0"></div>
           <div class="col-lg-4 col-12 align-items-center align-content-center">
             <p class="h1 fw-bold mb-5 text-center">Generate Documents</p>
             <div class="form-group row mb-3">
-              <label for="tema" class="col-2 col-form-label">Themes</label>
-              <div class="col-10">
+              <label
+                for="tema"
+                class="col-12 col-sm-2 col-md-2 col-lg-3 col-form-label"
+                >Themes</label
+              >
+              <div class="col-12 col-sm-10 col-md-10 col-lg-9">
                 <div class="tag-parent">
-                  <span class="tag-span">something <i class="fas fa-xmark" style="float: right;display: inline-block;padding-left: 0.5rem;"></i></span>
-                  <input id="tema" type="text" data-role="tagsinput" style="box-shadow: none; background-color: rgba(0,0,0, 0);" class="ps-0 pe-0 tag-input d-inline-block form-control border-0 text-white" placeholder="Ex: Nature, Apollo-11, Constantinopele">
+                  <span class="tag-span"
+                    >something
+                    <i
+                      class="fas fa-xmark"
+                      style="
+                        float: right;
+                        display: inline-block;
+                        padding-left: 0.5rem;
+                      "
+                    ></i
+                  ></span>
+                  <input
+                    id="tema"
+                    type="text"
+                    data-role="tagsinput"
+                    style="box-shadow: none; background-color: rgba(0, 0, 0, 0)"
+                    class="ps-0 pe-0 tag-input d-inline-block form-control border-0 text-white"
+                    placeholder="Ex: Nature, Apollo-11, Constantinopele"
+                  />
                 </div>
                 <!--div style="font-size: 10px;">*Pisahkan setiap tema dengan koma atau spasi, tidak boleh lebih dari 10 tema.</div-->
-                <div style="font-size: 10px;">*Separate each theme with a comma or space, and there should not be more than 10 themes.</div>
+                <div style="font-size: 10px">
+                  *Separate each theme with a comma or space, and there should
+                  not be more than 10 themes.
+                </div>
               </div>
             </div>
             <div class="form-group row mb-5">
-              <label for="bahasa" class="col-2 col-form-label">Language</label>
-              <div class="col-10">
-                <input id="bahasa" type="text" class="form-control neon-input border-0 text-white" id="bahasa" placeholder="Ex: ID">
+              <label
+                for="bahasa"
+                class="col-12 col-sm-2 col-md-2 col-lg-3 col-form-label"
+                >Language</label
+              >
+              <div class="col-12 col-sm-10 col-md-10 col-lg-9">
+                <input
+                  id="bahasa"
+                  type="text"
+                  class="form-control neon-input border-0 text-white"
+                  id="bahasa"
+                  placeholder="Ex: Indonesia"
+                />
               </div>
             </div>
             <div class="text-center">
-              <a class="neon" href="#">
+              <a class="neon" href="#service">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -327,57 +470,105 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-4 col-0">
+          <div class="col-lg-4 col-0"></div>
+        </div>
+      </div>
+    </section>
+    <section id="contactus" class="content">
+      <div class="container-fluid text-justify">
+        <div class="row ps-2 pe-2 ps-lg-0 pe-lg-0">
+          <div class="col-lg-6 col-0"></div>
+          <div
+            class="col-lg-6 col-12 align-items-center align-content-center"
+          >
+            <div class="container contact">
+              <div class="row">
+                <p class="h1 fw-bold mb-5 text-center">Contact Us</p>
+              </div>
+              <div class="row align-items-center align-content-center">
+                  <div class="col-12 col-xs-offset-3" style="padding-left: 10vw;padding-right: 10vw;">
+                      <form id="contact-form" class="form" action="#" method="POST" role="form">
+                          <div class="form-group">
+                              <label class="form-label js-hide-label" for="name">Your Name</label>
+                              <input type="text" class="form-control p-0 pb-2 mb-2" id="name" name="name" placeholder="Your name" tabindex="1" required>
+                          </div>                            
+                          <div class="form-group">
+                              <label class="form-label js-hide-label" for="email">Your Email</label>
+                              <input type="email" class="form-control p-0 pb-2 mb-2" id="email" name="email" placeholder="Your Email" tabindex="2" required>
+                          </div>                                           
+                          <div class="form-group">
+                              <label class="form-label js-hide-label" for="message">Message</label>
+                              <textarea rows="1" cols="50" name="message" class="form-control p-0 mb-2" id="message" placeholder="Message..." tabindex="4" required></textarea>                                 
+                          </div>
+                          <div class="text-center">
+                              <button type="submit" class="btn btn-start-order">Send Message</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <footer class="pt-5 pb-5">
+      <div>Footer</div>
+    </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
     <!--cdn jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--cdn fontawesome-->
-    <script src="https://kit.fontawesome.com/2f4d8d3ce9.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2f4d8d3ce9.js"
+      crossorigin="anonymous"
+    ></script>
     <!--cdn animate.css-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
     <script>
       AOS.init({
         duration: 1000, // Duration of animation (in milliseconds)
         offset: 200, // Offset (in pixels) from the top of the viewport
-        easing: 'ease-in-out', // Easing function for animation
+        easing: "ease-in-out", // Easing function for animation
         delay: 0, // Delay (in milliseconds) before animation starts
       });
-      $(document).ready(function() {
+      $(document).ready(function () {
         var lastScrollTop = 0;
-        var navbarHeight = $('.navbar').outerHeight();
+        var navbarHeight = $(".navbar").outerHeight();
         var screenHeight = $(window).height();
-        
-        $(window).scroll(function() {
+
+        $(window).scroll(function () {
           var scrollTop = $(this).scrollTop();
           if (scrollTop > screenHeight - navbarHeight) {
             if (scrollTop > lastScrollTop) {
-              $('.navbar').fadeIn('slow').removeClass('d-none');
+              $(".navbar").fadeIn("slow").removeClass("d-none");
             } else {
-              $('.navbar').fadeOut('slow').addClass('d-none');
+              $(".navbar").fadeOut("slow").addClass("d-none");
             }
           } else {
-            $('.navbar').fadeOut('slow').addClass('d-none');
+            $(".navbar").fadeOut("slow").addClass("d-none");
           }
-          
+
           lastScrollTop = scrollTop;
         });
       });
-      $(document).ready(function() {
+      $(document).ready(function () {
         var input = document.getElementsByClassName("tag-input")[0];
 
-        input.addEventListener("keyup", function(event) {
+        input.addEventListener("keyup", function (event) {
           if (event.keyCode === 13) {
             event.preventDefault();
             var tag = input.value;
             if (tag.length > 0) {
               var tagSpan = document.createElement("span");
               tagSpan.classList.add("tag-span");
-              tagSpan.innerHTML = tag + " <i class='fas fa-xmark' style='float: right;display: inline-block;padding-left: 0.5rem;'></i>";
+              tagSpan.innerHTML =
+                tag +
+                " <i class='fas fa-xmark' style='float: right;display: inline-block;padding-left: 0.5rem;'></i>";
               var tagParent = document.getElementsByClassName("tag-parent")[0];
               tagParent.appendChild(tagSpan);
               input.value = "";
@@ -385,13 +576,121 @@
           }
         });
 
-        $('input').focus(function() {
-            $(this).parent().addClass('neon-shadow');
+        $("input").focus(function () {
+          $(this).parent().addClass("neon-shadow");
         });
-        $('input').blur(function() {
-            $(this).parent().removeClass('neon-shadow');
+        $("input").blur(function () {
+          $(this).parent().removeClass("neon-shadow");
         });
       });
+      $(document).ready(function () {
+        var placeholderarray = [
+          "Ex: Indonesia",
+          "Ex: English",
+          "Ex: EN",
+          "Ex: ID",
+          "Ex: Spanish",
+          "Ex: Japanese",
+          "Ex: ESP",
+          "Ex: JPN",
+        ];
+        var i = 0; // Initialize a variable to keep track of the current index
+
+        function myFunction() {
+          $(".neon-input").addClass("input-fade");
+          setTimeout(function () {
+            $(".neon-input").attr("placeholder", placeholderarray[i]);
+            $(".neon-input").addClass("input-unfade");
+            setTimeout(function () {
+              $(".neon-input").removeClass("input-fade");
+              setTimeout(function () {
+                $(".neon-input").removeClass("input-unfade");
+              }, 100);
+            }, 600);
+          }, 600);
+
+          i++; // Increment the index
+          if (i >= placeholderarray.length) {
+            i = 0; // Start from the beginning if the end of the array is reached
+          }
+        }
+
+        var interval = setInterval(myFunction, 3000);
+        $(".neon-input").on("focus", function () {
+          clearInterval(interval);
+        });
+
+        $(".neon-input").on("blur", function () {
+          interval = setInterval(myFunction, 3000);
+        });
+      });
+      $(document).ready(function() {
+            $('#message').on('focus', function () {
+              $(this).animate({ rows: 5 }, 500);
+            });
+
+
+          // Test for placeholder support
+            $.support.placeholder = (function(){
+                var i = document.createElement('input');
+                return 'placeholder' in i;
+            })();
+
+            // Hide labels by default if placeholders are supported
+            if($.support.placeholder) {
+                $('.form-label').each(function(){
+                    $(this).addClass('js-hide-label');
+                });  
+
+                // Code for adding/removing classes here
+                $('.form-group').find('input, textarea').on('keyup blur focus', function(e){
+                    
+                    // Cache our selectors
+                    var $this = $(this),
+                        $label = $this.parent().find("label");
+                  
+                    switch(e.type) {
+                      case 'keyup': {
+                        $label.toggleClass('js-hide-label', $this.val() == '');
+                      } break;
+                      case 'blur': {
+                        if( $this.val() == '' ) {
+                            $label.addClass('js-hide-label');
+                        } else {
+                            $label.removeClass('js-hide-label').addClass('js-unhighlight-label');
+                        }
+                      } break;
+                      case 'focus': {
+                        if( $this.val() !== '' ) {
+                            $label.removeClass('js-unhighlight-label');
+                        }
+                      } break;
+                      default: break;
+                    }
+                    // previous implementation with ifs
+                    /*if (e.type == 'keyup') {
+                        if( $this.val() == '' ) {
+                            $parent.addClass('js-hide-label'); 
+                        } else {
+                            $parent.removeClass('js-hide-label');   
+                        }                     
+                    } 
+                    else if (e.type == 'blur') {
+                        if( $this.val() == '' ) {
+                            $parent.addClass('js-hide-label');
+                        } 
+                        else {
+                            $parent.removeClass('js-hide-label').addClass('js-unhighlight-label');
+                        }
+                    } 
+                    else if (e.type == 'focus') {
+                        if( $this.val() !== '' ) {
+                            $parent.removeClass('js-unhighlight-label');
+                        }
+                    }*/
+                });
+            } 
+        });
     </script>
   </body>
 </html>
