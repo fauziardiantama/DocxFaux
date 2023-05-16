@@ -63,6 +63,15 @@
         background-position: left;
       }
 
+      footer {
+        padding-top: 40vh;
+        padding-bottom: 3vh;
+        background-image: url("bg-4.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
       .neon-input:focus {
         box-shadow: 0 0 2px #03e9f4, 0 0 3px #03e9f4, 0 0 5px #03e9f4,
           0 0 20px #03e9f4, inset 0 0 5px #03e9f4;
@@ -280,6 +289,17 @@
         border-color: #fff !important;
         color: #fff !important;
       }
+
+      .send:hover {
+        border-color: #03e9f4!important;
+        box-shadow: 0 0 2px #03e9f4, 0 0 3px #03e9f4, 0 0 5px #03e9f4,
+          0 0 20px #03e9f4, inset 0 0 5px #03e9f4;
+      }
+
+      .send:active {
+        background-color: #03e9f4 !important;
+        color: #fff !important;
+      }
     </style>
   </head>
   <body style="background-color: #000000" class="text-white">
@@ -474,12 +494,14 @@
         </div>
       </div>
     </section>
-    <section id="contactus" class="content">
+    <section id="contactus" class="content overflow-hidden">
       <div class="container-fluid text-justify">
         <div class="row ps-2 pe-2 ps-lg-0 pe-lg-0">
           <div class="col-lg-6 col-0"></div>
           <div
-            class="col-lg-6 col-12 align-items-center align-content-center"
+            class="col-lg-6 col-12 align-items-center align-content-center aos-init aos-animate"
+            data-aos="fade-left"
+            data-aos-offset="300"
           >
             <div class="container contact">
               <div class="row">
@@ -501,7 +523,7 @@
                               <textarea rows="1" cols="50" name="message" class="form-control p-0 mb-2" id="message" placeholder="Message..." tabindex="4" required></textarea>                                 
                           </div>
                           <div class="text-center">
-                              <button type="submit" class="btn btn-start-order">Send Message</button>
+                              <button type="submit" class="btn send btn-start-order">Send Message</button>
                           </div>
                       </form>
                   </div>
@@ -511,8 +533,56 @@
         </div>
       </div>
     </section>
-    <footer class="pt-5 pb-5">
-      <div>Footer</div>
+    <footer class="content overflow-hidden text-center text-lg-start text-white" >
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+
+          <!-- Section: Social media -->
+          <section class="mb-4 text-center">
+
+            <!-- Twitter -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-twitter"></i
+              ></a>
+
+            <!-- Instagram -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-instagram"></i
+              ></a>
+
+            <!-- Linkedin -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+              ></a>
+
+            <!-- Github -->
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-github"></i
+              ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div
+            class="text-center p-3" id="copyright"
+            style="background-color: rgba(0, 0, 0, 0.3)"
+            >
+            © 2023 DocxFaux. All rights reserved.
+        </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script
@@ -691,6 +761,15 @@
                 });
             } 
         });
+    </script>
+    <script>
+      $(document).ready(function () {
+        var date = new Date();
+        var year = date.getFullYear();
+        if (year > 2023) {
+          $("#copyright").text("© 2023-"+year+" DocxFaux. All rights reserved.");
+        }
+      });
     </script>
   </body>
 </html>
