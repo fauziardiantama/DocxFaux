@@ -62,7 +62,6 @@
         background-size: cover;
         background-position: left;
       }
-
       footer {
         padding-top: 40vh;
         padding-bottom: 3vh;
@@ -447,15 +446,17 @@
                 <div class="tag-parent">
                   <span class="tag-span"
                     >something
-                    <i
-                      class="fas fa-xmark"
-                      style="
-                        float: right;
-                        display: inline-block;
-                        padding-left: 0.5rem;
-                      "
-                    ></i
-                  ></span>
+                    <a class="tag-close text-black text-decoration-none"
+                    style="
+                    float: right;
+                    display: inline-block;
+                    cursor: pointer;
+                    padding-left: 0.5rem;" onclick="deleteTag(this)">
+                      <i
+                        class="fas fa-xmark">
+                      </i>
+                    </a>
+                  </span>
                   <input
                     id="tema"
                     type="text"
@@ -646,7 +647,7 @@
               tagSpan.classList.add("tag-span");
               tagSpan.innerHTML =
                 tag +
-                " <i class='fas fa-xmark' style='float: right;display: inline-block;padding-left: 0.5rem;'></i>";
+                "<a class='tag-close text-black text-decoration-none' style='float: right; display: inline-block; cursor: pointer; padding-left: 0.5rem;' onclick='deleteTag(this)'><i class='fas fa-xmark'></i></a>";
               var tagParent = document.getElementsByClassName("tag-parent")[0];
               tagParent.appendChild(tagSpan);
               input.value = "";
@@ -778,6 +779,11 @@
           $("#copyright").text("© 2023-"+year+" DocxFaux. All rights reserved.");
         }
       });
+    </script>
+    <script>
+        function deleteTag(e) {
+          e.parentNode.remove();
+        }
     </script>
   </body>
 </html>
