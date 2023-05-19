@@ -93,11 +93,23 @@
         border-radius: var(--bs-border-radius);
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         align-items: center;
+        flex-wrap: wrap;
       }
 
       .tag-parent.neon-shadow {
         box-shadow: 0 0 2px #03e9f4, 0 0 3px #03e9f4, 0 0 5px #03e9f4,
           0 0 20px #03e9f4, inset 0 0 5px #03e9f4;
+      }
+
+      .tag-div {
+        width: 100%;
+      }
+
+      .tag-input {
+        width:100%;
+        display:flex;
+        flex-wrap: nowrap;
+        align-items: center;
       }
 
       .tag-span {
@@ -342,12 +354,12 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
+              <a class="nav-link" href="#service">Service</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contactus">Contact Us</a>
             </li>
-            <li class="nav-item dropdown">
+            <!--<li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -365,7 +377,7 @@
                 <li><a class="dropdown-item" href="#">English</a></li>
                 <li><a class="dropdown-item" href="#">Indonesia</a></li>
               </ul>
-            </li>
+            </li>-->
           </ul>
         </div>
       </div>
@@ -444,20 +456,9 @@
               >
               <div class="col-12 col-sm-10 col-md-10 col-lg-9">
                 <div class="tag-parent">
-                  <span class="tag-span"
-                    >something
-                    <a class="tag-close text-black text-decoration-none"
-                    style="
-                    float: right;
-                    display: inline-block;
-                    cursor: pointer;
-                    padding-left: 0.5rem;" onclick="deleteTag(this)">
-                      <i
-                        class="fas fa-xmark">
-                      </i>
-                    </a>
-                  </span>
-                  <input
+                  <div class="tag-div"></div>
+                  <div class="tag-input">
+                    <input
                     id="tema"
                     type="text"
                     data-role="tagsinput"
@@ -465,6 +466,7 @@
                     class="ps-0 pe-0 tag-input d-inline-block form-control border-0 text-white"
                     placeholder="Ex: Nature, Apollo-11, Constantinopele"
                   />
+                  </div>
                 </div>
                 <!--div style="font-size: 10px;">*Pisahkan setiap tema dengan koma atau spasi, tidak boleh lebih dari 10 tema.</div-->
                 <div style="font-size: 10px">
@@ -625,8 +627,6 @@
           if (scrollTop > screenHeight - navbarHeight) {
             if (scrollTop > lastScrollTop) {
               $(".navbar").fadeIn("slow").removeClass("d-none");
-            } else {
-              $(".navbar").fadeOut("slow").addClass("d-none");
             }
           } else {
             $(".navbar").fadeOut("slow").addClass("d-none");
@@ -636,30 +636,62 @@
         });
       });
       $(document).ready(function () {
-        var input = document.getElementsByClassName("tag-input")[0];
+        var input = $("#tema");
+        var tagParent = input.parent();
+        var tagDiv = $(".tag-div");
+        var tagInput = $(".tag-input");
 
-        input.addEventListener("keyup", function (event) {
-          if (event.keyCode === 13) {
+        input.on('keypress', function(event) {
+          var charCode = event.which;
+
+          // Allow alphabets (uppercase and lowercase)
+          if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            return true;
+          }
+
+          // Allow comma, numbers, space, and Enter
+          if (charCode === 44 || (charCode >= 48 && charCode <= 57) || charCode === 32 || charCode === 13) {
+            return true;
+          }
+
+          // Prevent other characters
+          event.preventDefault();
+        });
+
+        input.on("keydown", function(event) {
+          if (event.key === 'Enter' || event.key === ',' || event.key === ' ') {
             event.preventDefault();
-            var tag = input.value;
+            var tag = input.val();
             if (tag.length > 0) {
-              var tagSpan = document.createElement("span");
-              tagSpan.classList.add("tag-span");
-              tagSpan.innerHTML =
+              var tagSpan = $("<span></span>").addClass("tag-span");
+              tagSpan.html(
                 tag +
-                "<a class='tag-close text-black text-decoration-none' style='float: right; display: inline-block; cursor: pointer; padding-left: 0.5rem;' onclick='deleteTag(this)'><i class='fas fa-xmark'></i></a>";
-              var tagParent = document.getElementsByClassName("tag-parent")[0];
-              tagParent.appendChild(tagSpan);
-              input.value = "";
+                  "<a class='tag-close text-black text-decoration-none' style='float: right; display: inline-block; cursor: pointer; padding-left: 0.5rem;' onclick='deleteTag(this)'><i class='fas fa-xmark'></i></a>"
+              );
+              tagParent.prepend(tagSpan);
+              input.val("");
+              console.log(input.width());
+              if (input.width() <= 0) {
+                //check tagDiv height
+                var tagDivHeight = tagDiv.height();
+                var spans = $('.tag-input span');
+                tagDiv.append(spans);
+                //if tagDiv height added more than 24px, delete first span
+                if (tagDiv.height() > tagDivHeight + 24) {
+                   //append the first span in tagDiv to tagInput as the first child
+                    tagInput.prepend(spans[0]);
+                }
+              }
             }
           }
         });
 
         $("input").focus(function () {
-          $(this).parent().addClass("neon-shadow");
+          $(this).closest(".tag-parent").addClass("neon-shadow");
         });
+
         $("input").blur(function () {
-          $(this).parent().removeClass("neon-shadow");
+          $(this).closest(".tag-parent").removeClass("neon-shadow");
         });
       });
       $(document).ready(function () {
@@ -785,5 +817,28 @@
           e.parentNode.remove();
         }
     </script>
+      <script>
+        $(document).ready(function() {
+          var navLinks = $('.nav-link');
+          var sections = $('section');
+    
+          function setActiveLink() {
+            var scrollPosition = $(window).scrollTop();
+            sections.each(function() {
+              var sectionTop = $(this).offset().top;
+              var sectionHeight = $(this).outerHeight();
+              var sectionId = $(this).attr('id');
+              if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.removeClass('active');
+                $('a[href="#' + sectionId + '"]').addClass('active');
+              }
+            });
+          }
+    
+          setActiveLink();
+    
+          $(window).on('scroll', setActiveLink);
+        });
+      </script>
   </body>
 </html>
