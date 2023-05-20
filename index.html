@@ -469,7 +469,7 @@
                   </div>
                 </div>
                 <!--div style="font-size: 10px;">*Pisahkan setiap tema dengan koma atau spasi, tidak boleh lebih dari 10 tema.</div-->
-                <div style="font-size: 10px">
+                <div id="info" style="font-size: 10px">
                   *Separate each theme with a comma or space, and there should
                   not be more than 10 themes.
                 </div>
@@ -643,6 +643,7 @@
 
         input.on('keypress', function(event) {
           var charCode = event.which;
+          $("#info").text(charCode);
 
           // Allow alphabets (uppercase and lowercase)
           if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
