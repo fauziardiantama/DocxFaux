@@ -614,8 +614,12 @@
       jQuery(function($) { // DOM ready and $ alias secured
 
         $('#tema').on('input', function(e){
-          var key = e.which || this.value.substr(-1).charCodeAt(0);
-          alert( key )
+          var inputValue = this.value;
+          var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9, ]/g, ''); // Remove disallowed characters
+
+          if (inputValue !== sanitizedValue) {
+            this.value = sanitizedValue; // Update the input value with the sanitized version
+          }
         });
 
         });
