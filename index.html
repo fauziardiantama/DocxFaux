@@ -611,6 +611,16 @@
     <!--cdn animate.css-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
     <script>
+      jQuery(function($) { // DOM ready and $ alias secured
+
+        $('#tema').on('input', function(e){
+          var key = e.which || this.value.substr(-1).charCodeAt(0);
+          alert( key )
+        });
+
+        });
+    </script>
+    <script>
       AOS.init({
         duration: 1000, // Duration of animation (in milliseconds)
         offset: 200, // Offset (in pixels) from the top of the viewport
@@ -646,7 +656,6 @@
           var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9, ]/g, ''); // Remove disallowed characters
 
           if (inputValue !== sanitizedValue) {
-            console.log("tes");
             this.value = sanitizedValue; // Update the input value with the sanitized version
           }
         });
