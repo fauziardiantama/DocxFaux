@@ -641,22 +641,14 @@
         var tagDiv = $(".tag-div");
         var tagInput = $(".tag-input");
 
-        input.on('keypress', function(event) {
-          var charCode = event.which;
-          $("#info").text(charCode);
+        input.on('input', function(event) {
+          var inputValue = this.value;
+          var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9, ]/g, ''); // Remove disallowed characters
 
-          // Allow alphabets (uppercase and lowercase)
-          if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
-            return true;
+          if (inputValue !== sanitizedValue) {
+            console.log("tes");
+            this.value = sanitizedValue; // Update the input value with the sanitized version
           }
-
-          // Allow comma, numbers, space, and Enter
-          if (charCode === 44 || (charCode >= 48 && charCode <= 57) || charCode === 32 || charCode === 13) {
-            return true;
-          }
-
-          // Prevent other characters
-          event.preventDefault();
         });
 
         input.on("keydown", function(event) {
