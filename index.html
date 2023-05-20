@@ -613,7 +613,12 @@
     <script>
       jQuery(function($) { // DOM ready and $ alias secured
 
-        $('#tema').on('input', function(e){
+        var input = $("#tema");
+        var tagParent = input.parent();
+        var tagDiv = $(".tag-div");
+        var tagInput = $(".tag-input");
+
+        input.on('input', function(event) {
           var inputValue = this.value;
           var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9, ]/g, ''); // Remove disallowed characters
 
@@ -622,7 +627,34 @@
           }
         });
 
+        input.on("keydown", function(event) {
+          if (event.key === 'Enter' || event.key === ',' || event.key === ' ') {
+            event.preventDefault();
+            var tag = input.val();
+            if (tag.length > 0) {
+              var tagSpan = $("<span></span>").addClass("tag-span");
+              tagSpan.html(
+                tag +
+                  "<a class='tag-close text-black text-decoration-none' style='float: right; display: inline-block; cursor: pointer; padding-left: 0.5rem;' onclick='deleteTag(this)'><i class='fas fa-xmark'></i></a>"
+              );
+              tagParent.prepend(tagSpan);
+              input.val("");
+              console.log(input.width());
+              if (input.width() <= 0) {
+                //check tagDiv height
+                var tagDivHeight = tagDiv.height();
+                var spans = $('.tag-input span');
+                tagDiv.append(spans);
+                //if tagDiv height added more than 24px, delete first span
+                if (tagDiv.height() > tagDivHeight + 24) {
+                   //append the first span in tagDiv to tagInput as the first child
+                    tagInput.prepend(spans[0]);
+                }
+              }
+            }
+          }
         });
+      });
     </script>
     <script>
       AOS.init({
