@@ -620,7 +620,7 @@
 
         input.on('input', function(event) {
           var inputValue = this.value;
-          var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9, ]/g, ''); // Remove disallowed characters
+          var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9]/g, ''); // Remove disallowed characters
 
           if (inputValue !== sanitizedValue) {
             this.value = sanitizedValue; // Update the input value with the sanitized version
