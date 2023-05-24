@@ -319,9 +319,209 @@
         background-color: #03e9f4 !important;
         color: #fff !important;
       }
+
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  background-color: black;
+  z-index: 9999;
+}
+
+/* Compressing bars style */
+
+.bars-common {
+  height: 4vw;
+  max-height: 100%;
+  width: 1vw;
+  margin: auto;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.bar-one {
+  left: 0;
+  right: 4vw;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+}
+
+.bar-two {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+}
+
+.bar-three {
+  left: 4vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+}
+
+/* Rotating squares style */
+
+.squares-common {
+  height: 8vw;
+  max-height: 100%;
+  width: 8vw;
+  margin: auto;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0%;
+}
+
+.square-one {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+}
+
+.square-two {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+}
+
+/* Animation */
+/* Compressing bars animation */
+
+.bar-one {
+  animation: barOne 1s .33s ease infinite;
+  -moz-animation: barOne 1s .33s ease infinite;
+  /* Firefox */
+  -webkit-animation: barOne 1s .33s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: barOne 1s .33s ease infinite;
+  /* Opera */
+}
+
+@keyframes barOne {
+  0%,
+  100% {
+    box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+  }
+  50% {
+    height: 2.5vw;
+    box-shadow: 0 0 0 .1vw white, 0 0 1vw 0 white, inset 0 0 .5vw 0 white;
+  }
+}
+
+.bar-two {
+  animation: barTwo 1s .66s ease infinite;
+  -moz-animation: barTwo 1s .66s ease infinite;
+  /* Firefox */
+  -webkit-animation: barTwo 1s .66s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: barTwo 1s .66s ease infinite;
+  /* Opera */
+}
+
+@keyframes barTwo {
+  0%,
+  100% {
+    box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+  }
+  50% {
+    height: 2.5vw;
+    box-shadow: 0 0 0 .1vw white, 0 0 1vw 0 white, inset 0 0 .5vw 0 white;
+  }
+}
+
+.bar-three {
+  animation: barThree 1s .99s ease infinite;
+  -moz-animation: barThree 1s .99s ease infinite;
+  /* Firefox */
+  -webkit-animation: barThree 1s .99s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: barThree 1s .99s ease infinite;
+  /* Opera */
+}
+
+@keyframes barThree {
+  0%,
+  100% {
+    box-shadow: 0 0 0 .1vw cyan, 0 0 1vw 0 cyan, inset 0 0 .5vw 0 cyan;
+  }
+  50% {
+    height: 2.5vw;
+    box-shadow: 0 0 0 .1vw white, 0 0 1vw 0 white, inset 0 0 .5vw 0 white;
+  }
+}
+
+/* Rotating squares animation */
+
+.square-one {
+  animation: squareOne 4s .99s ease infinite;
+  -moz-animation: squareOne 4s .99s ease infinite;
+  /* Firefox */
+  -webkit-animation: squareOne 4s .99s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: squareOne 4s .99s ease infinite;
+  /* Opera */
+}
+
+@keyframes squareOne {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+.square-two {
+  animation: squareTwo 4s .99s ease infinite;
+  -moz-animation: squareTwo 4s .99s ease infinite;
+  /* Firefox */
+  -webkit-animation: squareTwo 4s .99s ease infinite;
+  /* Safari and Chrome */
+  -o-animation: squareTwo 4s .99s ease infinite;
+  /* Opera */
+}
+
+@keyframes squareTwo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
     </style>
   </head>
   <body style="background-color: #000000" class="text-white">
+    <div id="preloader">
+      <!-- Compressing bars component -->
+      <div class="bars-common bar-one"></div>
+      <div class="bars-common bar-two"></div>
+      <div class="bars-common bar-three"></div>
+
+      <!-- Rotating squares component -->
+      <div class="squares-common square-one"></div>
+      <div class="squares-common square-two"></div>
+    </div>
     <nav
       class="navbar navbar-expand-lg navbar-dark d-none fixed-top pt-3 pb-3"
       style="background-color: rgba(0, 0, 0, 0.8)"
@@ -492,7 +692,7 @@
               </div>
             </div>
             <div class="text-center">
-              <a class="neon" href="#service">
+              <a class="neon" id="submit-generate">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -611,8 +811,15 @@
     <!--cdn animate.css-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
     <script>
-      jQuery(function($) { // DOM ready and $ alias secured
+          $(window).on('load', function() {
+            $('#preloader').fadeOut('slow');
+          });
+    </script>
+    <script>
+      var tema = [];
+      var bahasa = null;
 
+      jQuery(function($) { // DOM ready and $ alias secured
         var input = $("#tema");
         var tagParent = input.parent();
         var tagDiv = $(".tag-div");
@@ -641,7 +848,51 @@
               );
               tagParent.prepend(tagSpan);
               input.val("");
-              console.log(input.width());
+              if (input.width() <= 0) {
+                //check tagDiv height
+                var tagDivHeight = tagDiv.height();
+                var spans = $('.tag-input span');
+                tagDiv.append(spans);
+                //if tagDiv height added more than 24px, delete first span
+                if (tagDiv.height() > tagDivHeight + 24) {
+                   //append the first span in tagDiv to tagInput as the first child
+                    tagInput.prepend(spans[0]);
+                }
+              }
+            }
+            //add tag to tema array
+            tema.push(tag);
+            console.log(tema);
+          }
+        });
+        var input = $("#tema");
+        var tagParent = input.parent();
+        var tagDiv = $(".tag-div");
+        var tagInput = $(".tag-input");
+
+        input.on('input', function(event) {
+          var inputValue = this.value;
+          var sanitizedValue = inputValue.replace(/[^a-zA-Z0-9, ]/g, ''); // Remove disallowed characters
+
+          if (inputValue !== sanitizedValue) {
+            this.value = sanitizedValue; // Update the input value with the sanitized version
+          }
+        });
+
+        input.on("keydown", function(event) {
+          if (event.key === 'Enter' || event.key === ',' || event.key === ' ') {
+            event.preventDefault();
+            var tag = input.val();
+            if (tag.length > 0) {
+              var tagSpan = $("<span></span>").addClass("tag-span");
+              tagSpan.html(
+                tag +
+                  "<a class='tag-close text-black text-decoration-none' style='float: right; display: inline-block; cursor: pointer; padding-left: 0.5rem;' onclick='deleteTag(this)'><i class='fas fa-xmark'></i></a>"
+              );
+              tagParent.prepend(tagSpan);
+              tema.push(tag);
+              console.log(tema);
+              input.val("");
               if (input.width() <= 0) {
                 //check tagDiv height
                 var tagDivHeight = tagDiv.height();
@@ -655,6 +906,23 @@
               }
             }
           }
+        });
+      });
+      function deleteTag(e) {
+          e.parentNode.remove();
+          //delete tag from tema array
+          var tag = e.parentNode.textContent;
+          var index = tema.indexOf(tag);
+          if (index > -1) {
+            tema.splice(index, 1);
+          }
+          console.log(tema);
+      }
+      $(document).ready(function () {
+        //click a link id submit-generate
+        $('#submit-generate').click(function () {
+          bahasa = $('#bahasa').val();
+          //console.log({'tema':tema, 'bahasa' : bahasa});
         });
       });
     </script>
@@ -853,11 +1121,6 @@
       });
     </script>
     <script>
-        function deleteTag(e) {
-          e.parentNode.remove();
-        }
-    </script>
-      <script>
         $(document).ready(function() {
           var navLinks = $('.nav-link');
           var sections = $('section');
@@ -879,6 +1142,6 @@
     
           $(window).on('scroll', setActiveLink);
         });
-      </script>
+    </script>
   </body>
 </html>
