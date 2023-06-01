@@ -975,18 +975,8 @@
               <div class="text-center">
                 <p>Dokumen telah dibuat</p>
               </div>
-              <table>
-                <tr>
-                  <td>Tema</td>
-                  <td>: </td>
-                  <td id="tema-text"></td>
-                </tr>
-                <tr>
-                  <td>Bahasa</td>
-                  <td>: </td>
-                  <td id="bahasa-text"></td>
-                </tr>
-              </table>
+              <p id="tema-text">Tema: </p>
+              <p id="bahasa-text">Bahasa: </p>
               <div class="text-center">
                 <a id="dokumen-download" href="#" class="btn download">Download</a>
               </div>
@@ -1137,7 +1127,7 @@
         var progress = 0;
 
         $('#submit-generate').click(function(){
-          
+          urlink = "https://docgenerator.is-an.app/api/generatedocument";
           success = $('.success');
           failed = $('.failed');
           loading = $('.loading');
@@ -1145,9 +1135,18 @@
           bahasa = $('#bahasa').val();
 
           console.log({'tema':tema, 'bahasa' : bahasa});
-
+          
+          if (tema.length > 0){
+            tema = tema.join('+');
+            urlink = urlink+'?theme='+tema;
+          }
+          if (tema.length > 0 && bahasa.length > 0){
+            urlink = urlink+'&lang='+bahasa;
+          } else if (tema.length == 0 && bahasa.length > 0){
+            urlink = urlink+'?lang='+bahasa;
+          }
           $.ajax({
-                url: "https://docgenerator.is-an.app/api/generatedocument",
+                url: urlink,
                 beforeSend: function(){
                 progressBar.css("width", "0%");
                 loading.fadeIn();
@@ -1160,8 +1159,8 @@
                   console.log(data);
                   tema_text = data.result.theme;
                   tema_text = tema_text.join(', ');
-                  $('#tema-text').text(tema_text);
-                  $('#bahasa-text').text(data.result.lang);
+                  $('#tema-text').text('Tema: '+tema_text);
+                  $('#bahasa-text').text('Bahasa: '+data.result.lang);
                   $('#dokumen-download').attr('href', data.result.link);
                 } else {
                   failed.fadeIn();
